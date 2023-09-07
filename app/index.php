@@ -1,3 +1,3 @@
 <?php
 require_once APP_DIR . 'helpers.php';
-//fsff
+require_once APP_DIR . 'db.php';

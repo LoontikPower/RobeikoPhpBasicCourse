@@ -1,6 +1,6 @@
 <?php
 
-const DB_HOST='database';
+const DB_HOST='localhost';
 
 const DB_USER='root';
 
@@ -34,4 +34,11 @@ const IMAGES_DIR=ASSETS_DIR. '/img';
 //echo '<pre>'.print_r(APP_DIR,true).'</pre>';
 //    die();
 
-
+enum Tables: string{
+    case Content='content';
+    case Users='users';
+    case Orders='orders';
+    case Products='products';
+    case OrderProducts='order_products';
+}
+//dd($_SERVER);

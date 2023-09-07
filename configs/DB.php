@@ -6,7 +6,7 @@ class DB
 
     public static function connect(): PDO
     {
-        dd(DSN,DB_USER,DB_PASSWORD);
+
         if(!isset(self::$instance)){
             self::$instance=new PDO(
                 DSN,

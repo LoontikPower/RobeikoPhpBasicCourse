@@ -9,3 +9,10 @@ function getUrl(): string
     //    d($uri);
 //    dd(explode('?',$uri)[0]);
 }
+
+function getContent(string $condition=null,bool $isSingle=false):array
+{
+    $rows=dbSelect(Tables::Content,condition: $condition,isSingle: $isSingle);
+
+    dd($rows);
+}

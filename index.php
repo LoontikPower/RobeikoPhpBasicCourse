@@ -30,10 +30,10 @@ try {
 
     require_once APP_DIR . 'index.php';
 
-    $query = "SELECT*FROM content";
-    $query=DB::connect()->prepare($query);
-    $query->execute();
-    dd($query->fetchAll());
+//    $query = "SELECT*FROM content";
+//    $query=DB::connect()->prepare($query);
+//    $query->execute();
+//    dd($query->fetchAll());
 
     require_once BASE_DIR . '/configs/router.php';
 
