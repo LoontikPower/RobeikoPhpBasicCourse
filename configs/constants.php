@@ -1,12 +1,12 @@
 <?php
 
-const DB_HOST='localhost';
+const DB_HOST='database';
 
 const DB_USER='root';
 
-const DB_PASSWORD='secret';
+const DB_PASSWORD='loontikus';
 
-const DATABASE='coffeeshop';
+const DATABASE='DataBase1';
 
 const DSN='mysql:host='.DB_HOST.';dbname='.DATABASE;
 
