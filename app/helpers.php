@@ -13,6 +13,14 @@ function getUrl(): string
 function getContent(string $condition=null,bool $isSingle=false):array
 {
     $rows=dbSelect(Tables::Content,condition: $condition,isSingle: $isSingle);
-
-    dd($rows);
+    $result=[];
+    if(!empty($rows)){
+        foreach ($rows as $row)
+        {
+            $result[$row['name']]=json_decode($row['content'],true);
+        }
+    }
+//    dd($rows,$result);
+    return $result;
 }
+

@@ -6,7 +6,7 @@ const DB_USER='root';
 
 const DB_PASSWORD='loontikus';
 
-const DATABASE='DataBase1';
+const DATABASE='DataBase1';  //database name
 
 const DSN='mysql:host='.DB_HOST.';dbname='.DATABASE;
 
