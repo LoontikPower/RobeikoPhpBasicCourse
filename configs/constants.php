@@ -1,6 +1,6 @@
 <?php
 
-const DB_HOST='localhost';
+const DB_HOST='database';
 
 const DB_USER='root';
 
