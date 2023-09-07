@@ -35,6 +35,8 @@ try {
 //    $query->execute();
 //    dd($query->fetchAll());
 
+    $commonBlocks=getContent('name IN ("navigation","footer")');
+
     require_once BASE_DIR . '/configs/router.php';
 
 
