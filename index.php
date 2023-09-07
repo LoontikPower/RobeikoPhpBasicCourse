@@ -8,9 +8,9 @@ const BASE_DIR = __DIR__;
 require_once BASE_DIR . '/vendor/autoload.php';
 
 $data = [
-  'title'=>'What kind of Coffee we serve for you',
-    'description'=>'Who are in extremely love with eco friendly system.',
-    'images'=>[
+    'title' => 'What kind of Coffee we serve for you',
+    'description' => 'Who are in extremely love with eco friendly system.',
+    'images' => [
         'g1.jpg',
         'g2.jpg',
         'g3.jpg',
@@ -25,19 +25,29 @@ $data = [
 
 require_once BASE_DIR . '/configs/constants.php';
 
-try{
+try {
+    require_once BASE_DIR . '/configs/DB.php';
 
     require_once APP_DIR . 'index.php';
 
+    $query = "SELECT*FROM content";
+    $query=DB::connect()->prepare($query);
+    $query->execute();
+    dd($query->fetchAll());
+
     require_once BASE_DIR . '/configs/router.php';
 
-}
-catch (Exception $exception)
-{
+
+
+
+} catch (PDOException $exception) {
+    d('PDOException');
+    dd($exception->getCode() . '-' . $exception->getMessage());
+} catch (Exception $exception) {
 //    echo '<pre>';
 //    var_dump($exception);
 //    die();
-    dd($exception->getCode().'-'.$exception->getMessage());
+    dd($exception->getCode() . '-' . $exception->getMessage());
 }
 
 

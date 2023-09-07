@@ -6,6 +6,10 @@ const DB_USER='root';
 
 const DB_PASSWORD='secret';
 
+const DATABASE='coffeeshop';
+
+const DSN='mysql:host='.DB_HOST.';dbname='.DATABASE;
+
 const APP_DIR=BASE_DIR . '/app/';
 const VIEW_DIR=BASE_DIR . '/views/';
 
