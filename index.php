@@ -5,6 +5,10 @@ error_reporting(E_ALL);
 
 const BASE_DIR = __DIR__;
 
+if (!session_id()) {
+    session_start();
+}
+
 require_once BASE_DIR . '/vendor/autoload.php';
 
 $data = [
@@ -35,11 +39,14 @@ try {
 //    $query->execute();
 //    dd($query->fetchAll());
 
-    $commonBlocks=getContent('name IN ("navigation","footer")');
+    if (!empty($_POST)) {
 
-    require_once BASE_DIR . '/configs/router.php';
+        require_once APP_DIR . 'forms/controller.php';
+    } else {
+        $commonBlocks = getContent('name IN ("navigation","footer")');
 
-
+        require_once BASE_DIR . '/configs/router.php';
+    }
 
 
 } catch (PDOException $exception) {

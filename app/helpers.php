@@ -24,3 +24,30 @@ function getContent(string $condition=null,bool $isSingle=false):array
     return $result;
 }
 
+function getRequestType (): string
+{
+    $type=filter_input(INPUT_POST,'type');
+    unset($_POST['type']);
+    return htmlspecialchars($type);
+}
+
+function redirect(string $path='/'):void
+{
+    $url=DOMAIN.$path;
+    header("Location: $url");
+    exit();
+}
+
+function redirectBack ():void
+{
+    $url=$_SERVER['HTTP_REFERER'];
+    header("Location: $url");
+    exit();
+
+}
+
+function emptyFields(array $fields, string $sessionKey):bool
+{
+
+}
+

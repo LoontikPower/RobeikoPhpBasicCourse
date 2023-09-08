@@ -14,7 +14,7 @@
 </head>
 <body>
 <?php //dd($commonBlocks) ?>
-<?php //dd($commonBlocks); ?>
+
 <section id="navigation" class="fixed-top">
     <div class="container">
         <div class="row">
@@ -36,6 +36,17 @@
                         </li>
 
                         <?php endforeach; ?>
+                        <li class="nav-item">
+                            <a href="/login" class="nav-link" aria-current="page">Sign In</a>
+                        </li>
+                        <li  class = "nav-item">
+                        <span class="nav-link disabled ">|</span>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/register" class="nav-link" aria-current="page">Sign Up</a>
+                        </li>
+
+
                     </ul>
                     <?php endif; ?>
                 </header>
