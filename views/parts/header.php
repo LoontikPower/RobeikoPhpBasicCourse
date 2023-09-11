@@ -13,14 +13,16 @@
 
 </head>
 <body>
-<?php //dd($commonBlocks) ?>
 
+
+<?php include_once PARTS_DIR.'notification.php'?>
 <section id="navigation" class="fixed-top">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <header class="d-flex flex-wrap justify-content-center py-3">
                     <?php if ($commonBlocks['navigation']['logo']): ?>
+
                         <a href="/"
                            class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                             <img src="<?= IMAGES_URI ?>/<?= $commonBlocks['navigation']['logo'] ?>" alt="Logo">
@@ -36,6 +38,7 @@
                         </li>
 
                         <?php endforeach; ?>
+                        <?php if (!isAuth()): ?>
                         <li class="nav-item">
                             <a href="/login" class="nav-link" aria-current="page">Sign In</a>
                         </li>
@@ -45,7 +48,22 @@
                         <li class="nav-item">
                             <a href="/register" class="nav-link" aria-current="page">Sign Up</a>
                         </li>
-
+                        <?php else: ?>
+                            <li class="nav-item">
+                                <span class="nav-link disabled">|</span>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">User Actions</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/account">Account</a></li>
+                                    <?php if (isAdmin()): ?>
+                                        <li><a href="/admin/dashboard" class="dropdown-item">Admin panel</a></li>
+                                    <?php endif; ?>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="/logout">Log Out</a></li>
+                                </ul>
+                            </li>
+                        <?php endif; ?>
 
                     </ul>
                     <?php endif; ?>
