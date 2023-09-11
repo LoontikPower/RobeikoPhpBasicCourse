@@ -23,5 +23,7 @@ function dbSelect(Tables $table, string $columns = '*', string $condition = null
 //
 
 
-dd(dbSelect(Tables::Content, condition: 'id=4', isSingle: true));
-
+//dd(dbSelect(Tables::Content, condition:'id=4' , isSingle: true));
+foreach (Tables::Content as $kon=>$value) {
+    dd(dbSelect(Tables::Content));
+}
