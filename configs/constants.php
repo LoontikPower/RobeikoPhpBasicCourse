@@ -51,4 +51,5 @@ enum SESSION_KEYS: string
     case REGISTER ='registration';
     case LOGIN = 'login';
     case CREATE_PRODUCT = 'create_product';
+    case EDIT_PRODUCT = 'edit_product';
 }

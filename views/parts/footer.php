@@ -11,7 +11,9 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
                 <?php endif;?>
 
-                <div class="copyright"><?= $footer['about']['copyright'].'|'??''?> This template is made with  by <a href="https://colorlib.com" target="_blank">Colorlib</a></div>
+                <div class="copyright"><?= $footer['about']['copyright'].'|'??''?> This template is made with  by
+                    <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                </div>
             </div>
             <div class="col-12 col-md-5 footer-newsletter">
                 <?php if($footer['form']['title']): ?>
@@ -52,9 +54,13 @@
         </div>
     </div>
 </footer>
-
-
+<?php include_once PARTS_DIR . 'modals/buy_product.php'; ?>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="<?= ASSETS_URI ?>/libs/bootstrap/js/bootstrap.bundle.min.js"> </script>
+<script type="application/javascript" src="<?= ASSETS_URI ?>/js/script.js"></script>
+<script type="application/javascript" src="<?= ASSETS_URI ?>/js/buy_product.js"></script>
+
+
 </body>
 </html>
 

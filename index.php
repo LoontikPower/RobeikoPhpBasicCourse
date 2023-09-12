@@ -50,8 +50,9 @@ try {
 
 
 } catch (PDOException $exception) {
-    d('PDOException');
-    dd($exception->getCode() . '-' . $exception->getMessage());
+//    d('PDOException');
+    notify( $exception->getMessage(),'danger');
+    redirectBack();
 } catch (Exception $exception) {
 //    echo '<pre>';
 //    var_dump($exception);
