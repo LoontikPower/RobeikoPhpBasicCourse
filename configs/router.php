@@ -20,6 +20,10 @@ switch (getUrl()){
         removeUser();
         redirect();
         break;
+    case 'cart':
+        require PAGE_DIR . 'cart.php';
+        conditionRedirect(isAuth());
+        break;
     case 'admin/dashboard':
         conditionRedirect(!isAdmin());
         require ADMIN_PAGE_DIR . '/dashboard.php';
