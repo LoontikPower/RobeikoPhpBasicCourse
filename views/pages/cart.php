@@ -26,7 +26,7 @@ $cart = getCartItems();
                                 $parentNumber = $number + 1;
                                 ?>
                                 <tr>
-                                    <td><?= $parentNumber ?></td>
+                                    <td><?= $parentNumber ?> </td>
                                     <td><?= $item['name'] ?></td>
                                     <td>$<?= $item['price'] ?></td>
                                     <td><?= $item['quantity'] ?></td>

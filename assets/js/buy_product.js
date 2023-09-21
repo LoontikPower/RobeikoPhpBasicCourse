@@ -74,6 +74,7 @@ function renderPrice(price) {
 function calculateTotalPrice() {
     let productTotal = parseFloat($(`${selectors.modal.product.total} .price`).text())
     const additions = $(`${selectors.modal.additions.toggle}:checked`)
+    console.log('total',productTotal);
 
     if (additions.length > 0) {
         additions.toArray().map(function (el) {

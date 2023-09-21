@@ -57,3 +57,12 @@ function addToCartParams(): array
 
     return filter_input_array(INPUT_POST, $options);
 }
+
+function removeCartItemParam():array
+{   $options = [
+    'product_key' => FILTER_VALIDATE_INT,
+    'parent_key' => FILTER_VALIDATE_INT
+];
+
+    return filter_input_array(INPUT_POST, $options);
+}
