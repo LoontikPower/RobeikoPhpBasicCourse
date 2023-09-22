@@ -67,6 +67,16 @@ $(document).on('change', selectors.modal.additions.toggle, function() {
     }
     calculateTotalPrice()
 })
+
+$(document).on('change', selectors.modal.additions.qty, function() {
+    const $parent = $(this).parents(selectors.modal.additions.item)
+    const $total = $parent.find(selectors.modal.additions.total)
+    const qty = $(this).val()
+    const price = parseFloat($parent.find(selectors.modal.additions.price).text()) * qty
+
+    $total.html(renderPrice(price))
+    calculateTotalPrice()
+})
 function renderPrice(price) {
     return `$<span class="price">${price.toFixed(2)}</span>`
 }
