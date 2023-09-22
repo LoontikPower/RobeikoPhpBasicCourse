@@ -49,7 +49,9 @@ function getCartItems(): array
     $cartItems = [];
     if (!empty($cart)) {
         $ids = mapCartIds($cart);
-        $products = dbSelect(Tables::Products, condition: 'id IN (' . implode(',', $ids) . ')');
+
+//        dd(implode(', ' , $ids),$ids);
+        $products = dbSelect(Tables::Products, condition: 'id IN (' . implode(', ' , $ids) . ')');
         $cartItems = prepareCartItems($cart, $products);
         $cartItems['total'] = calcTotal($cartItems);
     }

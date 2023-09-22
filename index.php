@@ -51,6 +51,7 @@ try {
 
 } catch (PDOException $exception) {
 //    d('PDOException');
+    dd($exception->getFile(),$exception->getLine(),$exception->getMessage());
     notify( $exception->getMessage(),'danger');
     redirectBack();
 } catch (Exception $exception) {

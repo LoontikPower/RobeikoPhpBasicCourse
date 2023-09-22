@@ -1,6 +1,4 @@
-<?php
-include_once PARTS_DIR.'notification.php'
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +16,9 @@ include_once PARTS_DIR.'notification.php'
 <body>
 
 
-
+<?php
+include_once PARTS_DIR.'notification.php'
+?>
 <section id="navigation" class="fixed-top">
     <div class="container">
         <div class="row">
