@@ -31,7 +31,7 @@ function createOrder(){
 
 function setProductsToOrder(int $orderId, array $cart):void
 {
-    $sql="INSERT INTO " . Tables::Orders->value." (order_id, product_id,quantity,single_price,additions) VALUES (:order_id, :product_id,:quantity,:single_price,:additions)";
+    $sql="INSERT INTO " . Tables::OrderProducts->value." (order_id, product_id,quantity,single_price,additions) VALUES (:order_id, :product_id,:quantity,:single_price,:additions)";
     $query=DB::connect()->prepare($sql);
 
 
@@ -87,6 +87,7 @@ function updateUserBalance(int $userId, float $total):void
 
     $sql="UPDATE ". Tables::Users->value." SET balance = balance - :total WHERE id = :id ";
     $query=DB::connect()->prepare($sql);
+    $query->bindParam('id',$userId,PDO::PARAM_INT);
     $query->bindParam('total',$total);
 
     $query->execute();
