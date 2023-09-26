@@ -28,19 +28,21 @@ include_once PARTS_DIR.'notification.php'
 
                         <a href="/"
                            class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                            <img src="<?= IMAGES_URI ?>/<?= $commonBlocks['navigation']['logo'] ?>" alt="Logo">
+                            <img src="<?= IMAGES_URI ?>/<?= $commonBlocks['navigation']['logo'] ?>" width="50" alt="Logo">
                         </a>
                     <?php endif; ?>
 
-                    <?php if ($commonBlocks['navigation']['links']): ?>
+
 
                     <ul class="nav nav-pills">
+                        <?php if ($commonBlocks['navigation']['links']): ?>
                         <?php foreach ($commonBlocks['navigation']['links'] as $link): ?>
                         <li class="nav-item">
                             <a href="<?= $link['href']?>" class="nav-link" aria-current="page"><?= $link['title']?></a>
                         </li>
 
                         <?php endforeach; ?>
+                        <?php endif; ?>
                         <li class="nav-item">
                             <a href="/cart" class="nav-link"
                                aria-current="page"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -74,7 +76,7 @@ include_once PARTS_DIR.'notification.php'
                         <?php endif; ?>
 
                     </ul>
-                    <?php endif; ?>
+
                 </header>
             </div>
         </div>

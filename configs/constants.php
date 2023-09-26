@@ -15,7 +15,7 @@ const VIEW_DIR=BASE_DIR . '/views/';
 
 const PAGE_DIR=VIEW_DIR . 'pages/';
 
-const ADMIN_PAGE_DIR= PAGE_DIR.'/admin';
+const ADMIN_PAGE_DIR= PAGE_DIR.'admin';
 
 const ACCOUNT_PAGE_DIR = PAGE_DIR . '/account';
 const PARTS_DIR=VIEW_DIR . 'parts/';
@@ -47,6 +47,8 @@ enum Tables: string{
     case Orders='orders';
     case Products='products';
     case OrderProducts='order_products';
+
+    case Newsletter = 'newsletter_subscribers';
 }
 //dd($_SERVER);
 

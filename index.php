@@ -32,7 +32,7 @@ require_once BASE_DIR . '/configs/constants.php';
 try {
     require_once BASE_DIR . '/configs/DB.php';
 
-    require_once APP_DIR . 'index.php';
+  require_once APP_DIR . '/index.php';
 
 //    $query = "SELECT*FROM content";
 //    $query=DB::connect()->prepare($query);

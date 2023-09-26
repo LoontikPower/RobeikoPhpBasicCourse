@@ -19,7 +19,8 @@
                 <?php if($footer['form']['title']): ?>
                 <h4>Newsletter</h4>
                 <?php endif;?>
-                <form action="" class="w-100">
+                <form action="/" method="POST" class="w-100">
+                    <input type="hidden" name="type" value="new_subscriber">
                     <div class="input-group mb-3">
                         <?php if($footer['form']['description']): ?>
                         <label for="email">Stay update with our latest</label>

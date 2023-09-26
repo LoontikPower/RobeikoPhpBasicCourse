@@ -12,7 +12,7 @@
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="<?= ASSETS_URI ?>/css/style.css">
 </head>
-<body class="account-body">
+<body  class="account-body">
 <?php include PARTS_DIR . '/notification.php'; ?>
 <header id="navigation">
     <div class="container">
@@ -26,10 +26,10 @@
             <?php endif; ?>
             <div class="col d-flex justify-content-end">
                 <nav class="nav">
-                    <a href="/account/orders" class="nav-link">Orders</a>
-                    <a href="#" class="nav-link disabled">|</a>
-                    <a href="/logout" class="nav-link">Back to Site</a>
-                    <a href="/logout" class="nav-link">Log Out</a>
+                    <a href="/account/orders" style="color: white" class="nav-link">Orders</a>
+                    <a href="#" style="color: white" class="nav-link disabled">|</a>
+                    <a href="/logout" style="color: white" class="nav-link">Back to Site</a>
+                    <a href="/logout" style="color: white" class="nav-link">Log Out</a>
                 </nav>
             </div>
         </div>
