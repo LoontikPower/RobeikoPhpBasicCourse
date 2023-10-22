@@ -5,62 +5,60 @@ error_reporting(E_ALL);
 
 const BASE_DIR = __DIR__;
 
+if (!session_id()) {
+    session_start();
+}
+
 require_once BASE_DIR . '/vendor/autoload.php';
 
 $data = [
-    'about'=>[
-        'title'=>'About us',
-        'description'=>'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.',
-        'socials'=>'Copyright ©2023 All rights reserved'
-    ],
-    'form'=>[
-        'title'=>'Newsletter',
-        'description'=>'Stay update with our latest'
+    'title' => 'What kind of Coffee we serve for you',
+    'description' => 'Who are in extremely love with eco friendly system.',
+    'images' => [
+        'g1.jpg',
+        'g2.jpg',
+        'g3.jpg',
+        'g4.jpg',
+        'g5.jpg'
 
-    ],
-    'follow'=>[
-        'title'=>'Follow Us',
-        'description'=>'Let us be social',
-        'socials'=>[
-            [
-                'href'=>'https://facebook.com',
-                'icon'=>'fa-facebook-f'
-            ],
-            [
-                'href'=>'https://twitter.com',
-                'icon'=>'fa-twitter'
-            ],
-            [
-                'href'=>'https://instagram.com',
-                'icon'=>'fa-instagram'
-            ],
-            [
-                'href'=>'https://linkedin.com',
-                'icon'=>'fa-linkedin-in'
-            ]
-        ]
+
     ]
-
-
 ];
 
-dd(json_encode($data));
+//dd(json_encode($data));
 
 require_once BASE_DIR . '/configs/constants.php';
 
-try{
+try {
+    require_once BASE_DIR . '/configs/DB.php';
 
-    require_once APP_DIR . 'index.php';
+  require_once APP_DIR . '/index.php';
 
-    require_once BASE_DIR . '/configs/router.php';
+//    $query = "SELECT*FROM content";
+//    $query=DB::connect()->prepare($query);
+//    $query->execute();
+//    dd($query->fetchAll());
 
-}
-catch (Exception $exception)
-{
+    if (!empty($_POST)) {
+
+        require_once APP_DIR . 'forms/controller.php';
+    } else {
+        $commonBlocks = getContent('name IN ("navigation","footer")');
+
+        require_once BASE_DIR . '/configs/router.php';
+    }
+
+
+} catch (PDOException $exception) {
+//    d('PDOException');
+    dd($exception->getFile(),$exception->getLine(),$exception->getMessage());
+    notify( $exception->getMessage(),'danger');
+    redirectBack();
+} catch (Exception $exception) {
 //    echo '<pre>';
 //    var_dump($exception);
 //    die();
-    dd($exception->getCode().'-'.$exception->getMessage());
+    dd($exception->getCode() . '-' . $exception->getMessage());
 }
 
 
